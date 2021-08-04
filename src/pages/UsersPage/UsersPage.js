@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import UsersTable from '../../components/UsersTable';
+import axios from 'axios';
 
 const useUsers = () => {
   const [data, setData] = useState([]);
@@ -11,9 +12,11 @@ const useUsers = () => {
     const getUsers = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('http://localhost:3000/users');
+        const response = await fetch(`http://localhost:3000/users`);
 
         const { results } = await response.json();
+        // const { usersData, statistics } = results;
+        console.log(results);
         setData(results);
         setIsLoading(false);
         setIsError(false);
