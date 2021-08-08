@@ -12,7 +12,7 @@ export default function App() {
     <Container>
       <Switch>
         <HomePage exact path="/" />
-        <CurrentUserPage path="/users/:id" />
+        <CurrentUserPage path="/users/:userId" />
         <UsersPage path="/users" />
       </Switch>
     </Container>

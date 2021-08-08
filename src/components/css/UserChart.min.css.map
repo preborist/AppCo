@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,AAAC,CAEL,aAAa,CAAE,IAAI,CACpB",
+    "sources": [
+        "../UserСhart/UserChart.scss"
+    ],
+    "names": [],
+    "file": "UserChart.min.css"
+}

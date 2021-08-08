@@ -1,0 +1,76 @@
+.hero-container {
+  //   width: 1440px;
+}
+.logo {
+  // margin-top: 0;
+  padding-bottom: 48px;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  // padding-top: 24px;
+
+  h1 {
+    font-size: 40px;
+    line-height: 49px;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+.container .hero-container {
+  // position: relative;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-top: 24px;
+  padding-bottom: 22px;
+  background-image: url('./rectangle8.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hero-subtitle {
+  padding-bottom: 24px;
+  max-width: 586px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 59px;
+  span {
+    font-weight: bold;
+  }
+}
+
+.hero-description {
+  max-width: 580px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 142%;
+  padding-bottom: 32px;
+}
+
+.stat-button {
+  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.mobile-link {
+  // position: absolute;
+  // top: 72px;
+  // right: 209px;
+}

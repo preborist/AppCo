@@ -2,26 +2,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import SubscribeForm from '../../components/SubscribeForm/';
+import './HomePage.scss';
+import mobile from './mobile.png';
 
 const HomePage = () => (
   <>
-    {/* HEADER */}
-    <header>
-      <Link to="/">AppCo</Link>
-    </header>
-
     <main>
-      {/* HERO SECTION */}
-      <section className="hero">
-        <h2>
-          <span>Brainstorming</span> for desired perfect Usability
-        </h2>
-        <p>
-          Our design projects are fresh and simple and will benefit your
-          business greatly. Learn more about our work!
-        </p>
-        <Link to="/users">Views Stats</Link>
-      </section>
+      <div className="hero-container">
+        <section className="hero">
+          <Link className="logo" to="/">
+            <h1>AppCo</h1>
+          </Link>
+          <div className="wrapper">
+            <div className=" subwrapper ">
+              <h2 className="hero-subtitle">
+                <span>Brainstorming</span> for desired perfect Usability
+              </h2>
+              <p className="hero-description">
+                Our design projects are fresh and simple and will benefit your
+                business greatly. Learn more about our work!
+              </p>
+              <Link to="/users">
+                <button className="stat-button" type="button">
+                  Views Stats
+                </button>
+              </Link>
+            </div>
+            <Link to="#" className="mobile-link">
+              <img src={mobile} alt="mobile" />
+            </Link>
+          </div>
+        </section>
+      </div>
 
       {/* FEATURES SECTION */}
       <section className="features">

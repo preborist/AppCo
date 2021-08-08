@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
-import UserСhart from '../../components/UsersTable';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import UserChart from '../../components/UserСhart';
 
-const useUserStatistic = userId => {
+const useUserStatistic = () => {
+  let location = useLocation();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -10,8 +12,10 @@ const useUserStatistic = userId => {
     const getUserStatistic = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
-
+        const response = await fetch(
+          `http://localhost:3000${location.pathname}`,
+        );
+        // console.log('response: ', response);
         const { results } = await response.json();
         setData(results);
         setIsLoading(false);
@@ -23,7 +27,7 @@ const useUserStatistic = userId => {
       }
     };
     getUserStatistic();
-  }, []);
+  }, [location.pathname]);
 
   return {
     data,
@@ -32,8 +36,9 @@ const useUserStatistic = userId => {
   };
 };
 
-const CurrentUserPage = userId => {
+const CurrentUserPage = () => {
   const userStatistic = useUserStatistic();
+  // console.log('userStatistic: ', userStatistic);
 
   return (
     <div>
@@ -45,7 +50,12 @@ const CurrentUserPage = userId => {
         if (userStatistic.isError) {
           return <div>...error</div>;
         }
-        return <UserСhart data={userStatistic.data} />;
+        return (
+          <div>
+            <h1></h1>
+            <UserChart userData={userStatistic.data} />
+          </div>
+        );
       })()}
     </div>
   );
