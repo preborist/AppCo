@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import UsersTable from '../../components/UsersTable';
 import axios from 'axios';
 
@@ -13,10 +14,11 @@ const useUsers = () => {
       try {
         setIsLoading(true);
         const response = await fetch(`http://localhost:3000/users`);
+        console.log('response: ', response);
 
         const { results } = await response.json();
         // const { usersData, statistics } = results;
-        console.log(results);
+        console.log('results: ', results);
         setData(results);
         setIsLoading(false);
         setIsError(false);
@@ -41,6 +43,12 @@ const UsersPage = () => {
 
   return (
     <div>
+      <Link to="/">
+        Main page <span>&#62; </span>
+      </Link>
+      <Link to="/users">Users statistics</Link>
+
+      <h2>Users statistics</h2>
       {(() => {
         if (users.isLoading) {
           return <div>...loading</div>;

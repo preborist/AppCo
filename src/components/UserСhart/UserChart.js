@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
 import DatePicker from 'react-datepicker';
 
@@ -7,7 +8,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './UserChart';
 
 const UserChart = ({ userData }) => {
-  const [inputUserData, setInputUserData] = useState(userData);
+  const { userStatistic, user } = userData;
+  const fullName = user[0].first_name + ' ' + user[0].last_name;
+  // console.log('user: ', user[0].first_name);
+  const [inputUserData, setInputUserData] = useState(userStatistic);
   const allDates = inputUserData.map(item => item.date);
   const [date, setDate] = useState(allDates);
   const [clicks, setClicks] = useState([]);
@@ -20,6 +24,7 @@ const UserChart = ({ userData }) => {
     result.setDate(result.getDate() + days);
     return result;
   }
+  let location = useLocation();
 
   const [minDate, setMinDate] = useState(new Date(date[0]));
   const [maxDate, setMaxDate] = useState(new Date(date[lastIndex - 1]));
@@ -122,6 +127,14 @@ const UserChart = ({ userData }) => {
   return (
     <>
       <>
+        <Link to="/">
+          Main page <span>&#62; </span>
+        </Link>
+        <Link to="/users">
+          Users statistics <span>&#62; </span>
+        </Link>
+        <Link to={location.pathname}>{fullName}</Link>
+        <h2>{fullName}</h2>
         <DatePicker
           selectsRange={true}
           startDate={startDate}

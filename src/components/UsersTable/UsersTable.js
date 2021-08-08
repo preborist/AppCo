@@ -6,6 +6,7 @@ import TableItem from '../TableItem';
 import ReactPaginate from 'react-paginate';
 
 const UsersTable = ({ data }) => {
+  console.log('data: ', data);
   const { usersData, statistics } = data;
   console.log('statistics: ', statistics);
   const [currentPage, setPage] = useState(0);

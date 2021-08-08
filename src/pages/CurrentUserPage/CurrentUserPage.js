@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import UserChart from '../../components/UserСhart';
 
 const useUserStatistic = () => {
@@ -18,6 +19,7 @@ const useUserStatistic = () => {
         // console.log('response: ', response);
         const { results } = await response.json();
         setData(results);
+        // console.log('results: ', results);
         setIsLoading(false);
         setIsError(false);
       } catch (error) {
@@ -39,7 +41,7 @@ const useUserStatistic = () => {
 const CurrentUserPage = () => {
   const userStatistic = useUserStatistic();
   // console.log('userStatistic: ', userStatistic);
-
+  let location = useLocation();
   return (
     <div>
       {(() => {
