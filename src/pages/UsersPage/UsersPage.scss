@@ -1,0 +1,59 @@
+.users-page-container {
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+.logo.users {
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-top: 10px;
+  padding-bottom: 13px;
+  color: #ffffff;
+  text-decoration: none;
+  background: #3a80ba;
+  // padding-top: 24px;
+
+  h1 {
+    font-size: 40px;
+    line-height: 49px;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+.navigation-bar {
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.link.secondary {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #cccccc;
+  span {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.link.primary {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #3a80ba;
+}
+
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  padding-bottom: 16px;
+  color: #1a1a1a;
+}

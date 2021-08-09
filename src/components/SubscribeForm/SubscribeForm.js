@@ -1,15 +1,19 @@
 import React from 'react';
+import './SubscribeForm.scss';
 
 export default function SubscribeForm() {
   return (
     <>
-      <form autoComplete="off">
-        <label>
-          <span className="label">email</span>
-          <input placeholder="Enter your email" name="email" type="email" />
-        </label>
+      <form className="form" autoComplete="off">
+        <div className="form-wrapper">
+          <label>
+            <input placeholder="Enter your email" name="email" type="email" />
+          </label>
 
-        <button type="submit">Subscribe</button>
+          <button className="form-button" type="button">
+            Subscribe
+          </button>
+        </div>
       </form>
     </>
   );

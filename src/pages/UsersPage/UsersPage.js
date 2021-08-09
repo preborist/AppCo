@@ -2,8 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import UsersTable from '../../components/UsersTable';
-import axios from 'axios';
-
+import './UsersPage.scss';
 const useUsers = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,22 +42,37 @@ const UsersPage = () => {
 
   return (
     <div>
-      <Link to="/">
-        Main page <span>&#62; </span>
+      <Link className="logo users" to="/">
+        <h1>AppCo</h1>
       </Link>
-      <Link to="/users">Users statistics</Link>
+      <div className="users-page-container">
+        <nav className="navigation-bar">
+          <Link className="link secondary" to="/">
+            Main page<span>&#62;</span>
+          </Link>
+          <Link className="link primary" to="/users">
+            Users statistics
+          </Link>
+        </nav>
+        <h2 className="title">Users statistics</h2>
+        {(() => {
+          if (users.isLoading) {
+            return <div>...loading</div>;
+          }
 
-      <h2>Users statistics</h2>
-      {(() => {
-        if (users.isLoading) {
-          return <div>...loading</div>;
-        }
-
-        if (users.isError) {
-          return <div>...error</div>;
-        }
-        return <UsersTable data={users.data} />;
-      })()}
+          if (users.isError) {
+            return <div>...error</div>;
+          }
+          return <UsersTable data={users.data} />;
+        })()}
+      </div>
+      <footer className="footer users">
+        <Link className="footer-logo link" to="/">
+          AppCo
+        </Link>
+        <p className="footer-text">All rights reserved by ThemeTags</p>
+        <p className="footer-text">Copyrights &copy; 2021.</p>
+      </footer>
     </div>
   );
 };

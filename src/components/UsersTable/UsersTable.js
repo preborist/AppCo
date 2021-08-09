@@ -1,9 +1,11 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import { Link, useHistory } from 'react-router-dom';
 import _ from 'lodash';
 import TableItem from '../TableItem';
 import ReactPaginate from 'react-paginate';
+import './UsersTable.scss';
 
 const UsersTable = ({ data }) => {
   console.log('data: ', data);
@@ -16,9 +18,16 @@ const UsersTable = ({ data }) => {
     setPage(selected);
   };
 
+  let history = useHistory();
+
+  const handleRoute = userId => {
+    history.push(`/users/${userId}`);
+    // console.log('userId: ', userId);
+  };
+
   const pageSize = 50;
   const displayData = _.chunk(usersData, pageSize)[currentPage];
-  console.log('displayData', displayData);
+  // console.log('displayData', displayData);
 
   return (
     <div>
@@ -37,14 +46,8 @@ const UsersTable = ({ data }) => {
         </thead>
         <tbody>
           {displayData.map(user => (
-            <tr key={user.id}>
-              <Link
-                to={{
-                  pathname: `/users/${user.id}`,
-                }}
-              >
-                <TableItem userData={user} statData={statistics} />
-              </Link>
+            <tr onClick={() => handleRoute(user.id)} key={user.id}>
+              <TableItem userData={user} statData={statistics} />
             </tr>
           ))}
         </tbody>

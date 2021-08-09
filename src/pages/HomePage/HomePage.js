@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
+
 import SubscribeForm from '../../components/SubscribeForm/';
 import './HomePage.scss';
 import mobile from './mobile.png';
+import design from './design.svg';
+import data from './data.svg';
+import retina from './retina.svg';
 
 const HomePage = () => (
   <>
@@ -37,28 +40,48 @@ const HomePage = () => (
 
       {/* FEATURES SECTION */}
       <section className="features">
-        <h2>
+        <h2 className="features-title">
           Why <span>small business owners love</span> AppCo?
         </h2>
-        <p>
+        <p className="features-description">
           Our design projects are fresh and simple and will benefit your
           business greatly. Learn more about our work!
         </p>
-        <ul>
-          <li>
-            <svg></svg>
-            <h3>Clean Design</h3>
-            <p>Increase sales by showing true dynamics of your website.</p>
+        <ul className="features-list list">
+          <li className="features-list-item">
+            <img
+              className="features-list-item-image"
+              src={design}
+              alt="design"
+              width="106"
+            ></img>
+            {/* <svg></svg> */}
+            <h3 className="features-list-item-title">Clean Design</h3>
+            <p className="features-list-item-description">
+              Increase sales by showing true dynamics of your website.
+            </p>
           </li>
-          <li>
-            <svg></svg>
-            <h3>Secure Data</h3>
-            <p>Build your online store’s trust using Social Proof & Urgency.</p>
+          <li className="features-list-item">
+            <img
+              className="features-list-item-image"
+              src={data}
+              alt="Кот"
+              width="106"
+            ></img>
+            <h3 className="features-list-item-title">Secure Data</h3>
+            <p className="features-list-item-description">
+              Build your online store’s trust using Social Proof & Urgency.
+            </p>
           </li>
-          <li>
-            <svg></svg>
-            <h3>Retina Ready</h3>
-            <p>
+          <li className="features-list-item">
+            <img
+              className="features-list-item-image"
+              src={retina}
+              alt="Кот"
+              width="106"
+            ></img>
+            <h3 className="features-list-item-title">Retina Ready</h3>
+            <p className="features-list-item-description">
               Realize importance of social proof in customer’s purchase
               decision.
             </p>
@@ -68,10 +91,12 @@ const HomePage = () => (
       <SubscribeForm />
     </main>
     {/* FOOTER */}
-    <footer className="footer">
-      <Link to="/">AppCo</Link>
-      <p>All rights reserved by ThemeTags</p>
-      <p>Copyrights &copy; 2021.</p>
+    <footer className="footer users">
+      <Link className="footer-logo link" to="/">
+        AppCo
+      </Link>
+      <p className="footer-text">All rights reserved by ThemeTags</p>
+      <p className="footer-text">Copyrights &copy; 2021.</p>
     </footer>
   </>
 );
