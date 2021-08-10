@@ -4,6 +4,7 @@
 .logo {
   // margin-top: 0;
   padding-bottom: 48px;
+
   display: block;
   color: #ffffff;
   text-decoration: none;
@@ -11,12 +12,13 @@
 
   h1 {
     font-size: 40px;
+
     line-height: 49px;
     font-style: normal;
     font-weight: normal;
   }
 }
-.container .hero-container {
+.my-container .hero-container {
   // position: relative;
   color: #ffffff;
   margin-left: auto;
@@ -29,9 +31,10 @@
 
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
 }
 
-.wrapper {
+.my-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -158,6 +161,13 @@
   color: #7e7e7e;
 }
 
+.footer-wrapper {
+  // padding-top: 24px;
+  background-image: url('./footer-backgroundsvg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .footer {
   text-align: center;
   display: flex;
@@ -168,7 +178,7 @@
   padding-left: 130px;
   padding-right: 130px;
 
-  background: linear-gradient(90.74deg, #255d8b 1.6%, #3a80ba 96.44%);
+  // background: linear-gradient(90.74deg, #255d8b 1.6%, #3a80ba 96.44%);
 }
 .footer.users {
   padding-top: 14px;

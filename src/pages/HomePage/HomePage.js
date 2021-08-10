@@ -16,7 +16,7 @@ const HomePage = () => (
           <Link className="logo" to="/">
             <h1>AppCo</h1>
           </Link>
-          <div className="wrapper">
+          <div className="my-wrapper">
             <div className=" subwrapper ">
               <h2 className="hero-subtitle">
                 <span>Brainstorming</span> for desired perfect Usability
@@ -88,16 +88,18 @@ const HomePage = () => (
           </li>
         </ul>
       </section>
-      <SubscribeForm />
     </main>
     {/* FOOTER */}
-    <footer className="footer users">
-      <Link className="footer-logo link" to="/">
-        AppCo
-      </Link>
-      <p className="footer-text">All rights reserved by ThemeTags</p>
-      <p className="footer-text">Copyrights &copy; 2021.</p>
-    </footer>
+    <div className="footer-wrapper">
+      <SubscribeForm />
+      <footer className="footer ">
+        <Link className="footer-logo link" to="/">
+          AppCo
+        </Link>
+        <p className="footer-text">All rights reserved by ThemeTags</p>
+        <p className="footer-text">Copyrights &copy; 2021.</p>
+      </footer>
+    </div>
   </>
 );
 

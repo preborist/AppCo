@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
 import React from 'react';
+import './TableItem.scss';
 
 const TableItem = ({ userData, statData }) => {
   //   console.log('statistics: ', statData);

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import _ from 'lodash';
+import Pagination from 'react-bootstrap/Pagination';
 import TableItem from '../TableItem';
 import ReactPaginate from 'react-paginate';
 import './UsersTable.scss';
@@ -30,29 +31,35 @@ const UsersTable = ({ data }) => {
   // console.log('displayData', displayData);
 
   return (
-    <div>
+    <div className="table-container">
       <table>
         <thead>
-          <tr>
-            <th>Id</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>IP address</th>
-            <th>Total clicks</th>
-            <th>Total page views</th>
+          <tr className="table-head">
+            <th className="table-head-titles">Id</th>
+            <th className="table-head-titles">First name</th>
+            <th className="table-head-titles">Last name</th>
+            <th className="table-head-titles">Email</th>
+            <th className="table-head-titles">Gender</th>
+            <th className="table-head-titles">IP address</th>
+            <th className="table-head-titles">Total clicks</th>
+            <th className="table-head-titles">Total page views</th>
           </tr>
         </thead>
         <tbody>
           {displayData.map(user => (
-            <tr onClick={() => handleRoute(user.id)} key={user.id}>
+            <tr
+              className="table__line"
+              onClick={() => handleRoute(user.id)}
+              key={user.id}
+            >
               <TableItem userData={user} statData={statistics} />
             </tr>
           ))}
         </tbody>
       </table>
       <ReactPaginate
+        containerClassName="pagination list"
+        pageClassName="page-item"
         previousLabel={'<'}
         nextLabel={'>'}
         breakLabel={'...'}
@@ -61,8 +68,8 @@ const UsersTable = ({ data }) => {
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
-        containerClassName={'pagination'}
-        activeClassName={'active'}
+        activeClassName="page-link-active"
+        pageLinkClassName="page-link"
       />
     </div>
   );
