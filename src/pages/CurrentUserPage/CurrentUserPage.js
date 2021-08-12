@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import './CurrentUserPage.scss';
 
 import UserChart from '../../components/UserСhart';
 
@@ -44,21 +45,39 @@ const CurrentUserPage = () => {
   let location = useLocation();
   return (
     <div>
-      {(() => {
-        if (userStatistic.isLoading) {
-          return <div>...loading</div>;
-        }
+      <Link className="logo users" to="/">
+        <h1>AppCo</h1>
+      </Link>
+      <div className="users-page-container current">
+        <Link className="link secondary" to="/">
+          Main page <span>&#62; </span>
+        </Link>
+        <Link className="link secondary" to="/users">
+          Users statistics <span>&#62; </span>
+        </Link>
 
-        if (userStatistic.isError) {
-          return <div>...error</div>;
-        }
-        return (
-          <div>
-            <h1></h1>
-            <UserChart userData={userStatistic.data} />
-          </div>
-        );
-      })()}
+        {(() => {
+          if (userStatistic.isLoading) {
+            return <div>...loading</div>;
+          }
+
+          if (userStatistic.isError) {
+            return <div>...error</div>;
+          }
+          return (
+            <>
+              <UserChart userData={userStatistic.data} />
+            </>
+          );
+        })()}
+      </div>
+      <footer className="footer users">
+        <Link className="footer-logo link" to="/">
+          AppCo
+        </Link>
+        <p className="footer-text">All rights reserved by ThemeTags</p>
+        <p className="footer-text">Copyrights &copy; 2021.</p>
+      </footer>
     </div>
   );
 };

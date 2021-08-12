@@ -3,10 +3,11 @@ import { useState } from 'react';
 
 import { useHistory } from 'react-router-dom';
 import _ from 'lodash';
-import Pagination from 'react-bootstrap/Pagination';
+// import Pagination from 'react-bootstrap/Pagination';
 import TableItem from '../TableItem';
 import ReactPaginate from 'react-paginate';
 import './UsersTable.scss';
+import next from './next.svg';
 
 const UsersTable = ({ data }) => {
   console.log('data: ', data);
@@ -26,7 +27,14 @@ const UsersTable = ({ data }) => {
     // console.log('userId: ', userId);
   };
 
-  const pageSize = 50;
+  const width = window.innerWidth;
+  // The width below which the mobile view should be rendered
+  const breakpoint = 768;
+
+  let pageSize = 0;
+  if (width < breakpoint) {
+    pageSize = 16;
+  } else pageSize = 50;
   const displayData = _.chunk(usersData, pageSize)[currentPage];
   // console.log('displayData', displayData);
 
@@ -60,8 +68,8 @@ const UsersTable = ({ data }) => {
       <ReactPaginate
         containerClassName="pagination list"
         pageClassName="page-item"
-        previousLabel={'<'}
-        nextLabel={'>'}
+        previousLabel={''}
+        nextLabel={''}
         breakLabel={'...'}
         breakClassName={'break-me'}
         pageCount={20}

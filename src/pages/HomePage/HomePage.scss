@@ -169,6 +169,8 @@
 }
 
 .footer {
+  // width: 100%;
+
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -177,7 +179,10 @@
   padding-bottom: 30px;
   padding-left: 130px;
   padding-right: 130px;
-
+  // position: absolute;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
   // background: linear-gradient(90.74deg, #255d8b 1.6%, #3a80ba 96.44%);
 }
 .footer.users {

@@ -41,7 +41,7 @@ const UsersPage = () => {
   const users = useUsers();
 
   return (
-    <div>
+    <>
       <Link className="logo users" to="/">
         <h1>AppCo</h1>
       </Link>
@@ -73,7 +73,7 @@ const UsersPage = () => {
         <p className="footer-text">All rights reserved by ThemeTags</p>
         <p className="footer-text">Copyrights &copy; 2021.</p>
       </footer>
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,10 @@
 // @import '~bootstrap/scss/bootstrap.scss';
 .table-container {
   max-width: 1180px;
-  overflow: scroll;
+
+  @media screen and (max-width: 1439px) {
+    overflow: scroll;
+  }
 }
 
 table {
@@ -33,7 +36,6 @@ table {
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-
   color: #1a1a1a;
   .table-head-titles {
     font-weight: normal;
@@ -49,6 +51,11 @@ table {
 .table__line {
   cursor: pointer;
 }
+.table__line:hover,
+.table__line:focus {
+  background-color: #dbefff;
+  transition: background-color 100ms linear;
+}
 
 .pagination {
   padding-top: 24px;
@@ -58,6 +65,7 @@ table {
 }
 
 .page-item {
+  margin-right: 8px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -87,4 +95,60 @@ table {
   padding-left: 21px;
   padding-right: 21px;
   cursor: pointer;
+}
+
+.previous {
+  margin-right: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  background-image: url('./previous.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  a {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    cursor: pointer;
+  }
+  // background-size: cover;
+}
+
+.next {
+  margin-left: 16px;
+  // width: 24px;
+  // // display: flex;
+  // // justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  background-image: url('./next.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  a {
+    display: block;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    cursor: pointer;
+  }
+  // background-size: cover;
+}
+
+.break-me {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+
+  a {
+    // display: block;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+  }
 }

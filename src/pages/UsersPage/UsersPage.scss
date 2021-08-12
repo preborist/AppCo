@@ -1,6 +1,12 @@
 .users-page-container {
   padding-left: 130px;
   padding-right: 130px;
+  min-height: 100vh;
+}
+
+.users-page-container.current {
+  padding-top: 16px;
+  padding-bottom: 48px;
 }
 
 .logo.users {
