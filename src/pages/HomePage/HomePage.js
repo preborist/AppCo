@@ -55,7 +55,7 @@ const HomePage = () => (
               alt="design"
               width="106"
             ></img>
-            {/* <svg></svg> */}
+
             <h3 className="features-list-item-title">Clean Design</h3>
             <p className="features-list-item-description">
               Increase sales by showing true dynamics of your website.

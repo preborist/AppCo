@@ -10,7 +10,7 @@ import './UserChart.scss';
 const UserChart = ({ userData }) => {
   const { userStatistic, user } = userData;
   const fullName = user[0].first_name + ' ' + user[0].last_name;
-  // console.log('user: ', user[0].first_name);
+
   const [inputUserData, setInputUserData] = useState(userStatistic);
   const allDates = inputUserData.map(item => item.date);
   const [date, setDate] = useState(allDates);
@@ -73,11 +73,8 @@ const UserChart = ({ userData }) => {
       setFilteredDateRange(filteredDates);
       setClicks(filteredClicks);
       setpageViews(filteredPageViews);
-      console.log('filteredDates: ', filteredDates);
-      console.log('filteredClicks: ', filteredClicks);
-      console.log('filteredPageViews: ', filteredPageViews);
     }
-  }, [endDate, startDate]);
+  }, [endDate, startDate, inputUserData]);
 
   const dataClicks = {
     labels: filteredDateRange,
@@ -100,7 +97,6 @@ const UserChart = ({ userData }) => {
         fill: false,
         backgroundColor: '#3A80BA',
         borderColor: '#3A80BA',
-        // tension: 0.1,
       },
     ],
   };
@@ -109,7 +105,6 @@ const UserChart = ({ userData }) => {
     responsive: true,
     plugins: {
       legend: {
-        // align: 'start',
         display: false,
       },
     },
@@ -123,7 +118,6 @@ const UserChart = ({ userData }) => {
       y: {
         min: 0,
         ticks: {
-          // forces step size to be 50 units
           stepSize: 200,
         },
       },
@@ -133,12 +127,6 @@ const UserChart = ({ userData }) => {
   return (
     <>
       <>
-        {/* <Link to="/">
-          Main page <span>&#62; </span>
-        </Link>
-        <Link to="/users">
-          Users statistics <span>&#62; </span>
-        </Link> */}
         <Link className="link primary" to={location.pathname}>
           {fullName}
         </Link>
@@ -152,7 +140,6 @@ const UserChart = ({ userData }) => {
               startDate={startDate}
               endDate={endDate}
               onChange={onChange}
-              selectsRange
               minDate={minDate}
               maxDate={maxDate}
               monthsShown={2}

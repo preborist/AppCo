@@ -2,6 +2,11 @@
   padding-left: 130px;
   padding-right: 130px;
   min-height: 100vh;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .users-page-container.current {
@@ -17,7 +22,11 @@
   color: #ffffff;
   text-decoration: none;
   background: #3a80ba;
-  // padding-top: 24px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   h1 {
     font-size: 40px;

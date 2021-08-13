@@ -2,10 +2,8 @@ import React from 'react';
 import './TableItem.scss';
 
 const TableItem = ({ userData, statData }) => {
-  //   console.log('statistics: ', statData);
   const { id, first_name, last_name, email, gender, ip_address } = userData;
   const currentUserStatArray = statData.filter(data => id == data.user_id);
-  //   console.log('currentUserStatArray: ', currentUserStatArray);
 
   const clicksSumm = currentUserStatArray.reduce(
     (acc, value) => acc + Number(value.clicks),

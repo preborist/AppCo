@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './CurrentUserPage.scss';
 
+import Loader from '../../components/Loader';
 import UserChart from '../../components/UserСhart';
 
 const useUserStatistic = () => {
@@ -17,10 +18,10 @@ const useUserStatistic = () => {
         const response = await fetch(
           `http://localhost:3000${location.pathname}`,
         );
-        // console.log('response: ', response);
+
         const { results } = await response.json();
         setData(results);
-        // console.log('results: ', results);
+
         setIsLoading(false);
         setIsError(false);
       } catch (error) {
@@ -41,8 +42,6 @@ const useUserStatistic = () => {
 
 const CurrentUserPage = () => {
   const userStatistic = useUserStatistic();
-  // console.log('userStatistic: ', userStatistic);
-  let location = useLocation();
   return (
     <div>
       <Link className="logo users" to="/">
@@ -58,7 +57,7 @@ const CurrentUserPage = () => {
 
         {(() => {
           if (userStatistic.isLoading) {
-            return <div>...loading</div>;
+            return <Loader />;
           }
 
           if (userStatistic.isError) {

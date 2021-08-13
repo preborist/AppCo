@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import UsersTable from '../../components/UsersTable';
 import './UsersPage.scss';
+import Loader from '../../components/Loader';
+
 const useUsers = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,11 +15,9 @@ const useUsers = () => {
       try {
         setIsLoading(true);
         const response = await fetch(`http://localhost:3000/users`);
-        console.log('response: ', response);
 
         const { results } = await response.json();
-        // const { usersData, statistics } = results;
-        console.log('results: ', results);
+
         setData(results);
         setIsLoading(false);
         setIsError(false);
@@ -57,7 +57,7 @@ const UsersPage = () => {
         <h2 className="title">Users statistics</h2>
         {(() => {
           if (users.isLoading) {
-            return <div>...loading</div>;
+            return <Loader />;
           }
 
           if (users.isError) {
