@@ -14,7 +14,9 @@ const useUsers = () => {
     const getUsers = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:3000/users`);
+        const response = await fetch(
+          `https://app-co-bitlab.herokuapp.com/users`,
+        );
 
         const { results } = await response.json();
 

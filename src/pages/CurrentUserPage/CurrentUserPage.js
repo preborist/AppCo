@@ -16,7 +16,7 @@ const useUserStatistic = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `http://localhost:3000${location.pathname}`,
+          `https://app-co-bitlab.herokuapp.com${location.pathname}`,
         );
 
         const { results } = await response.json();
