@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/AppCo/static/css/main.4e44bc5a.chunk.css",
+    "main.js": "/AppCo/static/js/main.41b215cf.chunk.js",
+    "main.js.map": "/AppCo/static/js/main.41b215cf.chunk.js.map",
+    "runtime-main.js": "/AppCo/static/js/runtime-main.f2347a80.js",
+    "runtime-main.js.map": "/AppCo/static/js/runtime-main.f2347a80.js.map",
+    "static/css/2.ecdd39c8.chunk.css": "/AppCo/static/css/2.ecdd39c8.chunk.css",
+    "static/js/2.5f1c39f6.chunk.js": "/AppCo/static/js/2.5f1c39f6.chunk.js",
+    "static/js/2.5f1c39f6.chunk.js.map": "/AppCo/static/js/2.5f1c39f6.chunk.js.map",
+    "static/js/3.72c4b112.chunk.js": "/AppCo/static/js/3.72c4b112.chunk.js",
+    "static/js/3.72c4b112.chunk.js.map": "/AppCo/static/js/3.72c4b112.chunk.js.map",
+    "index.html": "/AppCo/index.html",
+    "static/css/2.ecdd39c8.chunk.css.map": "/AppCo/static/css/2.ecdd39c8.chunk.css.map",
+    "static/css/main.4e44bc5a.chunk.css.map": "/AppCo/static/css/main.4e44bc5a.chunk.css.map",
+    "static/js/2.5f1c39f6.chunk.js.LICENSE.txt": "/AppCo/static/js/2.5f1c39f6.chunk.js.LICENSE.txt",
+    "static/media/UserChart.scss": "/AppCo/static/media/calendar.528f7576.svg",
+    "static/media/data.d7216fb1.svg": "/AppCo/static/media/data.d7216fb1.svg",
+    "static/media/design.f33b4d08.svg": "/AppCo/static/media/design.f33b4d08.svg",
+    "static/media/HomePage.scss": "/AppCo/static/media/rectangle8.37abcbe2.svg",
+    "static/media/mobile.577d74c5.png": "/AppCo/static/media/mobile.577d74c5.png",
+    "static/media/UsersTable.scss": "/AppCo/static/media/previous.ca7087b5.svg",
+    "static/media/retina.4aa8b18b.svg": "/AppCo/static/media/retina.4aa8b18b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2347a80.js",
+    "static/css/2.ecdd39c8.chunk.css",
+    "static/js/2.5f1c39f6.chunk.js",
+    "static/css/main.4e44bc5a.chunk.css",
+    "static/js/main.41b215cf.chunk.js"
+  ]
+}
